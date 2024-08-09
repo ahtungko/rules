@@ -1,0 +1,11 @@
+#!name=Unlock VSCO
+#!desc=Unlock VSCO
+
+[Script]
+VSCO=type=http-request,pattern=^https?:\/\/api\.vsco\.co\/v\d\/subscribers\/,script-path=https://raw.githubusercontent.com/ahtungko/rules/main/script/vsco/vsco.js
+VSCO1=type=http-response,pattern=^https?:\/\/api\.vsco\.co\/v\d\/subscribers\/,requires-body=1,script-path=https://raw.githubusercontent.com/ahtungko/rules/main/script/vsco/vsco.js
+
+
+[MITM]
+hostname= %APPEND% api.vsco.co
+
